@@ -47,28 +47,28 @@ class ContactProfile(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
     name =  models.CharField(max_length=100, verbose_name="Name")
     email = models.EmailField(verbose_name="Email")
-    message = models.TextField(verbose_name="Message")
+    message = models.TextField(verbose_name="Message", max_length=300)
 
     def __str__(self):
         return self.name
 
 
 # Testimonials Model
-class Testimonial(models.Model):
+# class Testimonial(models.Model):
 
-    class Meta:
-        verbose_name_plural = "Testimonials"
-        verbose_name = "Testimonial"
-        ordering = ['name']
+#     class Meta:
+#         verbose_name_plural = "Testimonials"
+#         verbose_name = "Testimonial"
+#         ordering = ['name']
 
-    thumbnail = models.ImageField(blank=True, null=True, upload_to='testimonials')
-    name = models.CharField(max_length=200, null=True, blank=True)
-    role = models.CharField(max_length=200, null=True, blank=True)
-    quote = models.CharField(max_length=500, null=True, blank=True)
-    is_active = models.BooleanField(default=True)
+#     thumbnail = models.ImageField(blank=True, null=True, upload_to='testimonials')
+#     name = models.CharField(max_length=200, null=True, blank=True)
+#     role = models.CharField(max_length=200, null=True, blank=True)
+#     quote = models.CharField(max_length=500, null=True, blank=True)
+#     is_active = models.BooleanField(default=True)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 # Media's model
 class Media(models.Model):
@@ -77,7 +77,7 @@ class Media(models.Model):
         verbose_name = "Media"
         ordering = ["name"]
 
-    image = models.ImageField(blank=True, null=True, upload_to='media')
+    image = models.ImageField(blank=True, null=True, upload_to='portfolio')
     url =  models.URLField(blank=True, null=True)
     name = models.CharField(max_length=200, null=True, blank=True)
     is_image = models.BooleanField(default=False)

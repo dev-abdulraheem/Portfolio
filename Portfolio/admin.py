@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import (
     UserProfile, 
     ContactProfile,
-    Testimonial, 
+    # Testimonial, 
     Media, 
     Blog, 
     Certificate, 
@@ -19,9 +19,9 @@ class UserProfileAdmin(admin.ModelAdmin):
 class ContactProfileAdmin(admin.ModelAdmin):
     list_display = ("id", "timestamp", "name")
 
-@admin.register(Testimonial)
-class TestimonialAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "is_active")
+# @admin.register(Testimonial)
+# class TestimonialAdmin(admin.ModelAdmin):
+#     list_display = ("id", "name", "is_active")
 
 @admin.register(Media)
 class MediaAdmin(admin.ModelAdmin):
